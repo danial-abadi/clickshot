@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Clickshot - steps</title>
+  <link rel="stylesheet" href="steps.css">
+</head>
+<body>
+  <header>
+    <h1>Steps <span id="total"></span></h1>
+    <div class="actions">
+      <label>Hide area:
+        <select id="mode">
+          <option value="box">Black box</option>
+          <option value="pixel">Pixelate</option>
+        </select>
+      </label>
+      <button id="zip">Download ZIP</button>
+      <button id="refresh">Refresh</button>
+      <button id="clear" class="danger">Clear all</button>
+    </div>
+  </header>
+  <div id="banner" hidden>New steps were recorded. <button id="bannerRefresh">Refresh</button></div>
+  <p class="tip">Drag on an image to hide a rectangle (API keys, passwords, phone numbers). Captions are saved as you type. The marker number follows the step order.</p>
+  <main id="list"></main>
+  <p id="empty" hidden>No steps yet. Open the extension popup and press Start recording.</p>
+
+  <script src="db.js"></script>
+  <script src="zip.js"></script>
+  <script src="steps.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root { color-scheme: light dark; }
+    body { width: 250px; margin: 0; padding: 12px; font: 13px system-ui, sans-serif; }
+    h1 { font-size: 14px; margin: 0 0 8px; }
+    #status { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+    #dot { width: 10px; height: 10px; border-radius: 50%; background: #9ca3af; }
+    #dot.on { background: #dc2626; }
+    #dot.paused { background: #d97706; }
+    button { display: block; width: 100%; margin: 0 0 6px; padding: 7px 8px; font: inherit; cursor: pointer; }
+    .row { display: flex; gap: 6px; }
+    .row button { flex: 1; }
+    .hint { font-size: 11px; opacity: .7; margin-top: 6px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <h1>Clickshot</h1>
+  <div id="status"><span id="dot"></span><span id="state">Not recording</span> &middot; <span id="count">0 steps</span></div>
+
+  <button id="start">Start recording</button>
+  <div class="row" id="running" hidden>
+    <button id="pause">Pause</button>
+    <button id="stop">Stop</button>
+  </div>
+  <button id="manual">Capture this tab now</button>
+  <button id="open">Open steps</button>
+  <button id="clear">Clear all steps</button>
+  <div class="hint">Works across tabs and windows. Shortcut for a manual capture: Alt+Shift+S</div>
+
+  <script src="db.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

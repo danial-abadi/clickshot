@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Clickshot",
+  "version": "1.0.0",
+  "description": "Records a screenshot with a click marker for every click, across tabs and sites, then lets you edit, blur and export the steps.",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "Clickshot",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "manual-capture": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Capture the current tab as a step (no click needed)"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
