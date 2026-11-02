@@ -1,5 +1,7 @@
 # Clickshot
 
+![Clickshot: click, capture, hide what is private, export](docs/clickshot-promo.gif)
+
 A Chrome extension (Manifest V3) that takes a screenshot of the page every time you click, marks where you clicked, and turns the result into an editable, shareable list of steps. Use it for bug reports, how-to guides and walkthroughs.
 
 It works across tabs, windows and sites, has no dependencies and no build step, and keeps everything in your browser.
